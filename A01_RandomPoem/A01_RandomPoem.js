@@ -1,26 +1,23 @@
 "use strict";
-var randomPoem;
-(function (randomPoem) {
-    let subject = ["Harry", "Uwe", "Mathilda", "Lele", "Doktor Skihü"];
-    let praedikat = ["knackt", "wirft", "isst", "begutachtet", "zerdrückt"];
-    let object = ["eine Walnuss", "das Glas", "die Banane", "Steine", "eine Kokosnuss"];
-    let poem = "";
-    for (let i = 5; i <= object.length; i--) {
-        if (i == 0) {
-            break;
-        }
-        console.log(i);
-        getVerse(subject, praedikat, object, poem);
+var Aufgabe01;
+(function (Aufgabe01) {
+    let subject = ["Harry", "Marco", "Dennis"];
+    let object = ["ein Ball", "die Uhr", "eine Apfel"];
+    let praed = ["wirft", "isst", "schmeisst"];
+    console.log(object);
+    for (let i = subject.length; i > 0; i--) {
+        let abcd = getVerse(subject, object, praed);
+        console.log(abcd);
     }
-    function getVerse(_subject, _praedikat, _object, _poem) {
-        let randomS = Math.floor(Math.random() * _subject.length);
-        _poem += _subject.splice(randomS, 1) + " ";
-        let randomP = Math.floor(Math.random() * _subject.length);
-        _poem += _praedikat.splice(randomP, 1) + " ";
-        let randomO = Math.floor(Math.random() * _subject.length);
-        _poem += _object.splice(randomO, 1) + " ";
-        console.log(_poem);
-        return _poem;
+    function getVerse(_subject, _object, _praed) {
+        let verse = "";
+        let randomSubject = Math.floor(Math.random() * _subject.length);
+        verse += _subject.splice(randomSubject, 1)[0] + " ";
+        let randomObject = Math.floor(Math.random() * _object.length);
+        verse += _object.splice(randomObject, 1)[0] + " ";
+        let randomPraed = Math.floor(Math.random() * _praed.length);
+        verse += _praed.splice(randomPraed, 1)[0] + " ";
+        return verse;
     }
-})(randomPoem || (randomPoem = {}));
+})(Aufgabe01 || (Aufgabe01 = {}));
 //# sourceMappingURL=A01_RandomPoem.js.map

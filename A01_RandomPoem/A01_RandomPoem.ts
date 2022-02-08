@@ -1,29 +1,56 @@
-namespace randomPoem {
+namespace Aufgabe01 {
+    let subject: string[] = ["Harry", "Marco", "Dennis"];
+    let object: string[] = ["ein Ball", "die Uhr", "eine Apfel"];
+    let praed: string[] = ["wirft", "isst", "schmeisst"];
+    console.log(object);
 
-let subject: string[] = ["Harry", "Uwe", "Mathilda", "Lele", "Doktor Skihü"];
-let praedikat: string[] = ["knackt", "wirft", "isst", "begutachtet", "zerdrückt"];
-let object: string[] = ["eine Walnuss", "das Glas", "die Banane", "Steine", "eine Kokosnuss"];
-let poem: string = "";
-
-for (let i: number = 5; i <= object.length; i--) {
-    if (i == 0) {
-        break;
+    for (let i: number = subject.length; i > 0; i--) {
+        let abcd: string = getVerse(subject, object, praed);
+        console.log(abcd);
     }
-    console.log(i);
-    getVerse (subject, praedikat, object, poem);
-}
 
-function getVerse (_subject: string[], _praedikat: string[], _object: string[], _poem: string ): string {
-    let randomS: number = Math.floor(Math.random() * _subject.length);
-    _poem += _subject.splice(randomS, 1) + " ";
+    function getVerse(_subject: string[], _object: string[], _praed: string[]): string {
+        let verse: string = "";
 
-    let randomP: number = Math.floor(Math.random() * _subject.length);
-    _poem += _praedikat.splice(randomP, 1) + " ";
+        let randomSubject: number = Math.floor(Math.random() * _subject.length);
+        verse += _subject.splice(randomSubject, 1)[0] + " ";
 
-    let randomO: number = Math.floor(Math.random() * _subject.length);
-    _poem += _object.splice(randomO, 1) + " ";
+        let randomObject: number = Math.floor(Math.random() * _object.length);
+        verse += _object.splice(randomObject, 1)[0] + " ";
 
-    console.log(_poem);
-    return _poem;
-}
+        let randomPraed: number = Math.floor(Math.random() * _praed.length);
+        verse += _praed.splice(randomPraed, 1)[0] + " ";
+
+        return verse;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

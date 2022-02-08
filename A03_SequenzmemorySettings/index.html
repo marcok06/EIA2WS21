@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L03_SequenzmemorySettings</title>
+    <script type="text/javascript" src="A03_SequenzmemorySettings.js"></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Sequencememory</h1>
+    <h2>Settings</h2>
+    <form>
+        <label for="cardSize">Card Size</label>
+        <input type="range" min="200" max="500" step="100" value="300" name="cardSize">
+        <br>
+        <label for="bgColor">Background Color</label>
+        <input type="color" name="bgColor">
+        <br>
+        <label for="cardColor">Card Color</label>
+        <input type="color" name="cardColor">
+        <br>
+        <label for="fontColor">Font Color</label>
+        <input type="color" name="fontColor">
+        <br>
+        <label for="gameLength">Game Length</label>
+        <input type="range" min="20" max="60" step="1" value="30" name="gameLength">
+        <br>
+        <span>Choose font</span>
+        <input type="radio" id="f1" name="fonts">
+        <label for="f1">Font 1</label>
+
+        <input type="radio" id="f2" name="fonts" checked>
+        <label for="f2">Font 2</label>
+
+        <input type="radio" id="f3" name="fonts">
+        <label for="f3">Font 3</label>
+        <br>
+        <label for="sequence">Enter your sequence</label>
+        <input type="text" name="sequence">
+        <br>
+        <button id="startGame" type="button">Start game</button>
+    </form>
+    <div id="game">
+        <div id="letters"></div>
+        <div id="timeLeftHolder">
+            <span id="timeLeft">30</span>
+            <span>sec</span>
+        </div>
+    </div>
+</body>
+
+</html>
