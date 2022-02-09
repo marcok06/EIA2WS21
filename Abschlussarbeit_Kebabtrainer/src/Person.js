@@ -37,7 +37,7 @@ var Kebabtrainer;
             }
         }
         drawHappy() {
-            //Draw Circle for the face (Its filled green because we are happy)
+            //Draw circle for face (green for happy)
             Kebabtrainer.crc2.beginPath();
             Kebabtrainer.crc2.arc(this.position.x, this.position.y, 30, 0, 2 * Math.PI);
             Kebabtrainer.crc2.strokeStyle = "black";
@@ -45,7 +45,7 @@ var Kebabtrainer;
             Kebabtrainer.crc2.fillStyle = "green";
             Kebabtrainer.crc2.fill();
             Kebabtrainer.crc2.closePath();
-            //Draw the eyes
+            //Draw eyes
             Kebabtrainer.crc2.beginPath();
             Kebabtrainer.crc2.arc(this.position.x - 10, this.position.y - 10, 5, 0, 2 * Math.PI);
             Kebabtrainer.crc2.strokeStyle = "black";
@@ -60,7 +60,7 @@ var Kebabtrainer;
             Kebabtrainer.crc2.fillStyle = "white";
             Kebabtrainer.crc2.fill();
             Kebabtrainer.crc2.closePath();
-            // Draw the mouth
+            // Draw mouth
             Kebabtrainer.crc2.beginPath();
             Kebabtrainer.crc2.arc(this.position.x, this.position.y + 10, 10, 0, Math.PI);
             Kebabtrainer.crc2.strokeStyle = "black";
@@ -70,7 +70,7 @@ var Kebabtrainer;
             Kebabtrainer.crc2.closePath();
         }
         drawNeutral() {
-            //Draw Circle for the face (Its filled green because we are happy)
+            //Draw circle for face (gray for neutral)
             Kebabtrainer.crc2.beginPath();
             Kebabtrainer.crc2.arc(this.position.x, this.position.y, 30, 0, 2 * Math.PI);
             Kebabtrainer.crc2.strokeStyle = "black";
@@ -103,7 +103,7 @@ var Kebabtrainer;
             Kebabtrainer.crc2.closePath();
         }
         drawSad() {
-            //Draw Circle for the face (Its filled green because we are happy)
+            //Draw circle for face (orange for sad))
             Kebabtrainer.crc2.beginPath();
             Kebabtrainer.crc2.arc(this.position.x, this.position.y, 30, 0, 2 * Math.PI);
             Kebabtrainer.crc2.strokeStyle = "black";
@@ -136,7 +136,7 @@ var Kebabtrainer;
             Kebabtrainer.crc2.closePath();
         }
         drawAngry() {
-            //Draw Circle for the face (Its filled green because we are happy)
+            //Draw circle for face (red for angry)
             Kebabtrainer.crc2.beginPath();
             Kebabtrainer.crc2.arc(this.position.x, this.position.y, 30, 0, 2 * Math.PI);
             Kebabtrainer.crc2.strokeStyle = "black";
