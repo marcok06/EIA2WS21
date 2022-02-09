@@ -21,7 +21,7 @@ var Kebabtrainer;
         let stressFactor = parseInt(prompt("How fast should the stress of the workers increase?", "2"));
         let maxFillAmount = parseInt(prompt("What is the max amount of the ingredient fills?:", "100"));
         // Create the shop
-        shop = new Shop(amountOfWorkers, amountOfCustomers * 1000, stressFactor, maxFillAmount);
+        shop = new Kebabtrainer.Shop(amountOfWorkers, amountOfCustomers * 1000, stressFactor, maxFillAmount);
         // Start the game loop
         window.setInterval(update, 20);
     }

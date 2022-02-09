@@ -1,19 +1,19 @@
 namespace Kebabtrainer {
     window.addEventListener("load", Init);
 
-    // Save the rendering contest as export so all of the classes can use it
+    // Save rendering context as export, so all classes can use it
     export let crc2: CanvasRenderingContext2D;
 
     // We just need the shop because all the workers and customers are saved in the shop
     let shop: Shop;
 
-    //Create variables to save the HTML Refrences of the selled items span, the worker happines span and the customer happines span
+    // Create variables to save the HTML references of sold items span, workers' and customers' happyness span
     let selledItems: HTMLSpanElement;
     let workerHappines: HTMLSpanElement;
     let customerHappines: HTMLSpanElement;
 
     function Init(): void {
-        // Get the rendering context for the canvas element
+        // Get rendering context for the canvas element
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         crc2 = canvas.getContext("2d")!;
 
@@ -30,24 +30,24 @@ namespace Kebabtrainer {
         // Create the shop
         shop = new Shop(amountOfWorkers, amountOfCustomers * 1000, stressFactor, maxFillAmount);
 
-        // Start the game loop
+        // Start game loop
         window.setInterval(update, 20);
     }
 
     function update() {
-        // Clear the background
+        // Clear background
         crc2.clearRect(0, 0, 1280, 720);
 
-        // Update the shop (The shop will then update all the workers and customers)
+        // Update shop (The shop will then update all the workers and customers)
         shop.update();
 
-        // Update the selled items
+        // Update sold items
         selledItems.innerHTML = shop.getSelledItems().toFixed();
 
-        // Update the worker happines
+        // Update worker happyness
         workerHappines.innerHTML = shop.getWorkerMood().toFixed(2);
 
-        // Update the customer happines
+        // Update customer happyness
         customerHappines.innerHTML = shop.getCustomerMood().toFixed(2);
     }
 }
