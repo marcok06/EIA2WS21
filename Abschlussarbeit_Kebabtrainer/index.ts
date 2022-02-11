@@ -1,5 +1,5 @@
 namespace Kebabtrainer {
-    window.addEventListener("load", Init);
+    window.addEventListener("load", handleLoad);
 
     // Save rendering context as export, so all classes can use it
     export let crc2: CanvasRenderingContext2D;
@@ -12,7 +12,7 @@ namespace Kebabtrainer {
     let workerHappines: HTMLSpanElement;
     let customerHappines: HTMLSpanElement;
 
-    function Init(): void {
+    function handleLoad(): void {
         // Get rendering context for the canvas element
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         crc2 = canvas.getContext("2d")!;
@@ -23,7 +23,7 @@ namespace Kebabtrainer {
 
         // Ask the user for the number of workers and customers
         let amountOfWorkers = parseInt(prompt("How many workers do you want to create?", "4")!);
-        let amountOfCustomers = parseInt(prompt("A new customer schould enter the shop every ... Sekonds:", "4")!);
+        let amountOfCustomers = parseInt(prompt("A new customer schould enter the shop every ... seconds:", "4")!);
         let stressFactor = parseInt(prompt("How fast should the stress of the workers increase?", "2")!);
         let maxFillAmount = parseInt(prompt("What is the max amount of the ingredient fills?:", "100")!);
 
