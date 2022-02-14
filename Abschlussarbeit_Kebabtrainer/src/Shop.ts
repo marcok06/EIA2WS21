@@ -238,7 +238,7 @@ namespace Kebabtrainer {
             crc2.fill();
             crc2.closePath();
 
-            // Draw cutt ingredients area
+            // Draw cut ingredients area
             crc2.beginPath();
             crc2.rect(100, 110, 100, 500);
             crc2.fillStyle = "purple";
