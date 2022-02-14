@@ -1,14 +1,8 @@
 namespace Kebabtrainer {
-    export enum Mood {
-        Happy,
-        Neutral,
-        Sad,
-        Angry
-    }
 
     export class Person extends Moveable {
-        protected shop: Shop;
         public mood: Mood;
+        protected shop: Shop;
 
         constructor(_shop: Shop, _pos: Vector) {
             super(_pos);

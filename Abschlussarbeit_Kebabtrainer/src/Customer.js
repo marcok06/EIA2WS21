@@ -15,7 +15,7 @@ var Kebabtrainer;
             if (this.served == true) {
                 return;
             }
-            // Time waited
+            // Time waited (every 20ms increase of 1)
             this.timeWaited += 1;
             // Change mood depending on time waited
             if (this.timeWaited < 1000) {
@@ -32,8 +32,9 @@ var Kebabtrainer;
             }
             this.updatePostion();
         }
+        // Set target position for customers.
         updatePostion() {
-            // Set target position for customers. 
+            // Count which position in queue customer is standing
             for (let i = 0; i < this.shop.customers.length; i++) {
                 if (this.shop.customers[i] == this) {
                     // Multiply 100 by the index, so customers stand behind each other in a row
@@ -67,7 +68,7 @@ var Kebabtrainer;
             if (_ingredients.length != this.ingredientWishes.length) {
                 isOrderRight = false;
             }
-            // Update customers mood
+            // Update customers mood depending on order correct or not
             if (isOrderRight) {
                 this.mood = Kebabtrainer.Mood.Happy;
             }

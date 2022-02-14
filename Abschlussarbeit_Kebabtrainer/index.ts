@@ -7,7 +7,7 @@ namespace Kebabtrainer {
     // We just need the shop because all the workers and customers are saved in the shop
     let shop: Shop;
 
-    // Create variables to save the HTML references of sold items span, workers' and customers' happyness span
+    // Create variables to save the HTML references of selled items span, workers' and customers' happiness span
     let selledItems: HTMLSpanElement;
     let workerHappines: HTMLSpanElement;
     let customerHappines: HTMLSpanElement;
@@ -22,10 +22,10 @@ namespace Kebabtrainer {
         customerHappines = document.getElementById("happinesCustomers") as HTMLSpanElement;
 
         // Ask the user for the number of workers and customers
-        let amountOfWorkers = parseInt(prompt("How many workers do you want to create?", "4")!);
-        let amountOfCustomers = parseInt(prompt("A new customer schould enter the shop every ... seconds:", "4")!);
-        let stressFactor = parseInt(prompt("How fast should the stress of the workers increase?", "2")!);
-        let maxFillAmount = parseInt(prompt("What is the max amount of the ingredient fills?:", "100")!);
+        let amountOfWorkers: number = parseInt(prompt("How many workers do you want to create?", "4")!);
+        let amountOfCustomers: number = parseInt(prompt("A new customer schould enter the shop every ... seconds:", "4")!);
+        let stressFactor: number = parseInt(prompt("How fast should the stress of the workers increase?", "2")!);
+        let maxFillAmount: number = parseInt(prompt("What is the max amount of the ingredient fills?:", "100")!);
 
         // Create the shop
         shop = new Shop(amountOfWorkers, amountOfCustomers * 1000, stressFactor, maxFillAmount);
@@ -34,20 +34,20 @@ namespace Kebabtrainer {
         window.setInterval(update, 20);
     }
 
-    function update() {
+    function update(): void {
         // Clear background
         crc2.clearRect(0, 0, 1280, 720);
 
         // Update shop (The shop will then update all the workers and customers)
         shop.update();
 
-        // Update sold items
+        // Update selled items
         selledItems.innerHTML = shop.getSelledItems().toFixed();
 
-        // Update worker happyness
+        // Update worker happiness
         workerHappines.innerHTML = shop.getWorkerMood().toFixed(2);
 
-        // Update customer happyness
+        // Update customer happiness
         customerHappines.innerHTML = shop.getCustomerMood().toFixed(2);
     }
 }

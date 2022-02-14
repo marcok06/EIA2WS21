@@ -21,9 +21,6 @@ var Kebabtrainer;
         setTarget(_target) {
             this.targetPosition = _target;
         }
-        draw() {
-            console.log("Moveable.draw()");
-        }
     }
     Kebabtrainer.Moveable = Moveable;
 })(Kebabtrainer || (Kebabtrainer = {}));

@@ -1,20 +1,13 @@
 "use strict";
 var Kebabtrainer;
 (function (Kebabtrainer) {
-    let Mood;
-    (function (Mood) {
-        Mood[Mood["Happy"] = 0] = "Happy";
-        Mood[Mood["Neutral"] = 1] = "Neutral";
-        Mood[Mood["Sad"] = 2] = "Sad";
-        Mood[Mood["Angry"] = 3] = "Angry";
-    })(Mood = Kebabtrainer.Mood || (Kebabtrainer.Mood = {}));
     class Person extends Kebabtrainer.Moveable {
-        shop;
         mood;
+        shop;
         constructor(_shop, _pos) {
             super(_pos);
             this.shop = _shop;
-            this.mood = Mood.Happy;
+            this.mood = Kebabtrainer.Mood.Happy;
         }
         update() {
             super.update();
@@ -22,16 +15,16 @@ var Kebabtrainer;
         }
         draw() {
             switch (this.mood) {
-                case Mood.Happy:
+                case Kebabtrainer.Mood.Happy:
                     this.drawHappy();
                     break;
-                case Mood.Neutral:
+                case Kebabtrainer.Mood.Neutral:
                     this.drawNeutral();
                     break;
-                case Mood.Sad:
+                case Kebabtrainer.Mood.Sad:
                     this.drawSad();
                     break;
-                case Mood.Angry:
+                case Kebabtrainer.Mood.Angry:
                     this.drawAngry();
                     break;
             }

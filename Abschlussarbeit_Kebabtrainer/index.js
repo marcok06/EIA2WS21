@@ -4,7 +4,7 @@ var Kebabtrainer;
     window.addEventListener("load", handleLoad);
     // We just need the shop because all the workers and customers are saved in the shop
     let shop;
-    // Create variables to save the HTML references of sold items span, workers' and customers' happyness span
+    // Create variables to save the HTML references of selled items span, workers' and customers' happiness span
     let selledItems;
     let workerHappines;
     let customerHappines;
@@ -30,11 +30,11 @@ var Kebabtrainer;
         Kebabtrainer.crc2.clearRect(0, 0, 1280, 720);
         // Update shop (The shop will then update all the workers and customers)
         shop.update();
-        // Update sold items
+        // Update selled items
         selledItems.innerHTML = shop.getSelledItems().toFixed();
-        // Update worker happyness
+        // Update worker happiness
         workerHappines.innerHTML = shop.getWorkerMood().toFixed(2);
-        // Update customer happyness
+        // Update customer happiness
         customerHappines.innerHTML = shop.getCustomerMood().toFixed(2);
     }
 })(Kebabtrainer || (Kebabtrainer = {}));

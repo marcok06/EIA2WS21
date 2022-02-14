@@ -19,13 +19,9 @@ namespace Kebabtrainer {
             _dir.scale(this.speed);
             this.position.add(_dir);
         }
-
+        
         public setTarget(_target: Vector): void {
             this.targetPosition = _target;
-        }
-
-        public draw(): void {
-            console.log("Moveable.draw()");
         }
     }
 }

@@ -9,6 +9,9 @@ var Kebabtrainer;
         update() {
             this.draw();
         }
+        draw() {
+            console.log("draw");
+        }
     }
     Kebabtrainer.Drawable = Drawable;
 })(Kebabtrainer || (Kebabtrainer = {}));

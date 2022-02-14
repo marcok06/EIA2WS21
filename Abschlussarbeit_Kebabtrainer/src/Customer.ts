@@ -19,7 +19,7 @@ namespace Kebabtrainer {
                 return;
             }
 
-            // Time waited
+            // Time waited (every 20ms increase of 1)
             this.timeWaited += 1;
 
             // Change mood depending on time waited
@@ -36,8 +36,9 @@ namespace Kebabtrainer {
             this.updatePostion();
         }
 
+        // Set target position for customers.
         public updatePostion(): void {
-            // Set target position for customers. 
+             // Count which position in queue customer is standing
             for (let i: number = 0; i < this.shop.customers.length; i++) {
                 if (this.shop.customers[i] == this) {
 
@@ -55,7 +56,7 @@ namespace Kebabtrainer {
             }
         }
 
-        public makeRandomWishes() {
+        public makeRandomWishes(): void {
             // Create random number of wishes
             let numberOfWishes: number = Math.floor(Math.random() * 3) + 1;
 
@@ -80,7 +81,7 @@ namespace Kebabtrainer {
                 isOrderRight = false;
             }
 
-            // Update customers mood
+            // Update customers mood depending on order correct or not
             if (isOrderRight) {
                 this.mood = Mood.Happy;
             } else {
